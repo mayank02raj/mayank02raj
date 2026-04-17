@@ -133,9 +133,9 @@ Six production-shaped repositories. **Pinned below in recommended reading order*
 
 |                                                                                                               |                                 |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------|
-|**Dr. Gokhan Kul** — Advisor · Associate Director of Cybersecurity Center, UMass Dartmouth                     |[UMassD](https://www.umassd.edu) |
 |**Dr. Nathaniel D. Bastian** — Deputy Director of Robotics Research Center, U.S. Military Academy at West Point|[USMA](https://www.westpoint.edu)|
 |**Dr. Lance Fiondella** — Director of Cybersecurity Center, UMass Dartmouth (NSA/DHS-designated CAE-R)         |[UMassD](https://www.umassd.edu) |
+|**Dr. Gokhan Kul** — Advisor · Associate Director of Cybersecurity Center, UMass Dartmouth                     |[UMassD](https://www.umassd.edu) |
 
 Research at UMass Dartmouth is conducted at the [Cybersecurity Center](https://www.umassd.edu/cybersecurity/), an **NSA/DHS-designated Center of Academic Excellence in Cyber Research** (CAE-R).
 
