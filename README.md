@@ -26,7 +26,7 @@ Currently a Graduate Research Assistant at UMass Dartmouth working with **Dr. Go
 
 -----
 
-## Flagship Research: ATT&CK-based Attack Chain Prediction
+## Most Recent Research: ATT&CK-based Attack Chain Prediction
 
 A hybrid LSTM-Markov framework for forecasting multi-stage adversary progressions against MITRE ATT&CK. Given three observed techniques from a defender’s telemetry, the pipeline generates risk-ranked predictions of what the attacker will do next:
 
