@@ -8,7 +8,7 @@
 <p align="center">
   <a href="https://mayank02raj.github.io"><img src="https://img.shields.io/badge/Portfolio-mayank02raj.github.io-1F6FEB?style=flat-square&logo=github" alt="Portfolio"></a>
   <a href="https://linkedin.com/in/mayank02raj"><img src="https://img.shields.io/badge/LinkedIn-mayank02raj-0A66C2?style=flat-square&logo=linkedin" alt="LinkedIn"></a>
-  <a href="mailto:raj02mayank@gmail.com"><img src="https://img.shields.io/badge/Email-mraj1%40umassd.edu-D44638?style=flat-square&logo=gmail" alt="Email"></a>
+  <a href="mailto:raj02mayank@gmail.com"><img src="https://img.shields.io/badge/Email-raj02mayank%40gmail.com-D44638?style=flat-square&logo=gmail" alt="Email"></a>
   <img src="https://img.shields.io/badge/Work%20Auth-F--1%20STEM%20OPT-2EA44F?style=flat-square" alt="Work Authorization">
 </p>
 
