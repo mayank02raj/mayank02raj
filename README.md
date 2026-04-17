@@ -1,170 +1,78 @@
-<h1 align="center">Mayank Raj</h1>
+# Mayank Raj
 
-<p align="center">
-  <strong>ML Security Researcher</strong> · Predictive Cyber Defense · Adversarial ML for NIDS<br>
-  M.S. Data Science @ UMass Dartmouth · Graduating May 2026
-</p>
+**ML Security Researcher** · Graduate Research Assistant, UMass Dartmouth × U.S. Military Academy at West Point
 
-<p align="center">
-  <a href="https://mayank02raj.github.io"><img src="https://img.shields.io/badge/Portfolio-mayank02raj.github.io-1F6FEB?style=flat-square&logo=github" alt="Portfolio"></a>
-  <a href="https://linkedin.com/in/mayank02raj"><img src="https://img.shields.io/badge/LinkedIn-mayank02raj-0A66C2?style=flat-square&logo=linkedin" alt="LinkedIn"></a>
-  <a href="mailto:raj02mayank@gmail.com"><img src="https://img.shields.io/badge/Email-raj02mayank%40gmail.com-D44638?style=flat-square&logo=gmail" alt="Email"></a>
-  <img src="https://img.shields.io/badge/Work%20Auth-F--1%20STEM%20OPT-2EA44F?style=flat-square" alt="Work Authorization">
-</p>
+I build ML systems that move cyber defense from **reactive detection** to **proactive prediction and decision**.
 
------
+📍 Dartmouth, MA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj)
 
-## About
+![Badge — DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge — Papers](https://img.shields.io/badge/First--Author%20Papers-4%20Under%20Review-4FA3FF?style=flat-square&labelColor=0A1830)
 
-I build ML systems that move cyber defense from **reactive detection to proactive prediction**. My flagship research uses hybrid LSTM-Markov models to forecast multi-stage adversary progressions against the MITRE ATT&CK framework — anticipating an attacker’s next move with 86% accuracy from three observed steps, and scoring each predicted continuation on a continuous 0–10 risk scale that SOC teams can act on.
+---
 
-The same research agenda extends into measuring where existing ML-based detectors fail under adversarial pressure, generating the synthetic training data needed to fix them, and quantifying open-set uncertainty in intrusion detection. Four first-author papers currently under review, all supported by a DoD Cooperative Agreement with the **U.S. Military Academy at West Point**.
+## 🎯 Recent Research
 
-Currently a Graduate Research Assistant at UMass Dartmouth working with **Dr. Gokhan Kul**. Before the MS, 3+ years as a Data Scientist and Software Engineer at Eklavya Estate (Bengaluru), shipping ETL pipelines, time-series forecasting, and AWS microservices for production use — which is why the research I do is grounded in deployable systems, not just benchmarks.
+A two-part program on **predictive cyber defense with empirical decision theory**. Both parts submitted, both supported by DoD Cooperative Agreement W911NF-22-2-0160 in collaboration with the U.S. Military Academy at West Point.
 
-**Graduating May 2026, thesis defense August 2026. Open to cybersecurity research-scientist, threat-detection-engineering, and ML-engineer roles in the US.**
+### Part 1 — Attack Chain Prediction (SECRYPT 2026, under review)
+Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed attack prefix (e.g., `T1566.001 → T1059 → T1003`), the system generates risk-ranked continuations via constrained beam search.
 
------
+- **86% next-step accuracy**, Pearson **r=0.76** / Spearman **ρ=0.81** against CISA NCISS severity scoring
+- **26,051 risk-ranked forecasts** at **<0.2 sec** inference latency per prefix
+- Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces (Unit42 + MITRE Attack Flow)
+- Formal 0–10 risk model integrates EPSS, CAPEC, CISA KEV, D3FEND coverage, OCTAVE impact
 
-## Most Recent Research: ATT&CK-based Attack Chain Prediction
+→ Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-A hybrid LSTM-Markov framework for forecasting multi-stage adversary progressions against MITRE ATT&CK. Given three observed techniques from a defender’s telemetry, the pipeline generates risk-ranked predictions of what the attacker will do next:
+### Part 2 — ATT&CK-Derived Decision Theory (DSN 2026 Workshop, under review)
+Decision-theoretic extension of Part 1. Takes the same pipeline's data structures and adds an Adversarial Risk Analysis (ARA-OSID) layer that selects **defender-optimal response policy** `r*` across the full threat landscape.
 
-```
- Observed prefix:                        Top predicted continuation:
- ───────────────                         ──────────────────────────
- T1566.001  Spearphishing Attachment     Lateral Movement →
- T1059      PowerShell Execution     →   Data Staging →
- T1003      OS Credential Dumping        Exfiltration over C2
-                                         Risk: 9.4 / 10
-```
+- **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata — no assumed values
+- Joint attacker-defender model with Monte Carlo integration (N=10,000) over Beta-distributed detection probabilities
+- Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**
+- Attacker utility `ψ_A` built from technique permissions, D3FEND coverage, kill-chain position, NCISS benefit
+- Defender utility `ψ_r` built from group frequency, severity-weighted detection gaps, evasion sub-technique counts, mitigation portfolio size
 
-- **86% next-step prediction accuracy** across three training regimes
-- **Pearson r = 0.76** and **Spearman ρ = 0.81** correlation against CISA NCISS severity (80/20 scenario)
-- **42.3% real-world transition coverage** across **26,051 risk-ranked forecasts** from 800 seed prefixes
-- Inference latency **under 0.2 seconds per prefix** — SOC-workflow compatible
-- Formal 0–10 risk model integrating EPSS, CAPEC, LSTM confidence, CISA KEV, D3FEND coverage, and OCTAVE-based organizational impact
+→ The two parts answer complementary questions: **Part 1 asks "what will the attacker do?"** **Part 2 asks "given that, what should the defender do?"**
 
-**Under review at SECRYPT 2026.** Code, dataset, trained models, and beam-generated forecasts:
-**[`github.com/mayank02raj/ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)**
+---
 
------
+## 🛠️ Supporting Research
 
-## Supporting Research
+Research on the infrastructure the flagship pipeline depends on. Two first-author papers under review.
 
-Three additional first-author papers that extend the research agenda across the full defensive stack. All DoD-funded.
+| Paper | Venue | Contribution | Repo |
+|---|---|---|---|
+| **The False Champion Problem** — categorical robustness assessment of ML-based NIDS | IEEE Access | CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023 (68.66-pp gap) | [Robustness-of-NIDS](https://github.com/mayank02raj/Robustness-of-NIDS) |
+| **Constraint-enforcing synthetic packet generation** | ICCCN 2026 | **200× amplification** of a 5-sample ARP Spoofing class with **<2.5%** anomaly rate against independent validators | [Synthetic-Network-Packet-Generation](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation) |
 
-|Paper                                                                                  |Venue                           |Core Finding                                                                                                                                                                           |
-|---------------------------------------------------------------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**Categorical Robustness Assessment for ML-based NIDS**                                |IEEE Access (under review)      |The *False Champion Problem*: Random Forest collapses from 99.98% → 26.8% under FGSM at ε=0.01, while CNN retains 95.5%. Architecture beats hyperparameters for adversarial deployment.|
-|**Synthetic Network Packet Generation via Statistical Learning and Genetic Algorithms**|ICCCN 2026 (under review)       |Constraint-enforcing generation that passes independent validators across all 12 ACI-IoT-2023 categories. 200× amplification of a 5-sample ARP Spoofing class where SMOTE fails.       |
-|**Adversarial Risk Analysis for Open-Set Intrusion Detection**                         |DSN 2026 Workshop (under review)|ARA utility-function framework for open-set detection under adversarial uncertainty.                                                                                                   |
+---
 
-Together, the four papers tell one story: **measure where detectors fail** (Robustness), **generate the data to fix them** (Synthetic Packet Generation), **predict what the adversary will do next** (ATT&CK Chain Prediction — the flagship), and **quantify uncertainty when facing the unknown** (ARA-OSID).
+## 💻 Production-Shaped Open Source
 
------
+| Repo | Stack | What it demonstrates |
+|---|---|---|
+| [`SOC-home-lab`](https://github.com/mayank02raj/SOC-home-lab) | Wazuh, Suricata, TheHive, Cortex, Grafana, Prometheus, Docker Compose | 11-service Dockerized SOC with 9 authored Sigma rules (pytest CI), custom Sigma-to-Wazuh compiler, 8-stage MITRE ATT&CK adversary emulation covering 91.3% of the kill chain |
+| [`ATTACK-Coverage-Dashboard`](https://github.com/mayank02raj/ATTACK-Coverage-Dashboard) | Streamlit, SQLite, Python | 7-page analytics over MITRE ATT&CK coverage; ingests Sigma / Wazuh-XML / JSON rules; data-source-weighted coverage across 130+ threat actors; exports ATT&CK Navigator JSON + PDF reports |
+| [`Phishing-URL-Detector`](https://github.com/mayank02raj/Phishing-URL-Detector) | FastAPI, XGBoost, PyTorch (CharCNN), SHAP, Prometheus, Docker | Production-shaped ML service: XGBoost on 42 engineered features + CharCNN on raw URL characters; per-request SHAP explanations, PSI drift monitoring; ~97% accuracy at <1ms CPU inference |
 
-## Highlights
+---
 
-- 🏆 **1st place** at the **2026 NCAE Cyber Games** (Northeast 2 region) — highest overall score among 140 national teams. Live SOC work with Splunk, Corelight, MITRE ATT&CK Navigator, and real-time hardening on Rocky Linux.
-- 🎓 **IEEE MILCOM 2025 reviewer** · **DSN 2026 Workshop TPC member** · **IEEE Communications Society member**
-- 🔬 **DoD-funded research** — 2.5+ years on the Adversarial Risk Analysis for Cybersecurity project (Cooperative Agreement W911NF-22-2-0160) with West Point
-- 🏢 **3+ years industry experience** before the MS — Data Scientist and Software Engineer at Eklavya Estate (Bengaluru), shipping ETL pipelines, time-series forecasting, and AWS microservices
-- 🛡️ **ISC2 Certified in Cybersecurity (CC)** · **OSCP in progress** (April–August 2026)
-- 🎤 **CTF team lead**, organizer of the OWASP Juice Shop CTF for the Cyber Secure Computing Club at UMass Dartmouth
+## 🎓 Background
 
------
+- **M.S. Data Science (Thesis Track)**, UMass Dartmouth · GPA 3.6/4.0 · expected May 2026
+  - *Thesis:* Resilience Engineering of ML-enabled Open-World Recognition for Network Intrusion Detection Systems. Defense August 2026.
+- **B.Tech. Mechanical Engineering**, Christ University, Bengaluru
+- 4+ years industry ML: Data Scientist / Software Engineer at Eklavya Estate (Bengaluru) — ETL pipelines on 500K+ records, ARIMA + LSTM forecasting across 15+ markets, AWS microservices at 10K+ concurrent users
 
-## Portfolio
+## 🏆 Competition & Service
 
-Six production-shaped repositories. **Pinned below in recommended reading order** — each README includes architecture diagrams, reproducibility notes, and a “skills mapped to job postings” section.
+- **1st Place** — 2026 NCAE Cyber Games, Northeast 2 Region (highest overall score among 140 national teams)
+- **ISC2 Certified in Cybersecurity (CC)** — 2025; **OSCP** in progress, targeting Aug 2026
+- Technical Paper Reviewer, **IEEE MILCOM 2025**
+- Technical Program Committee, **DSN 2026 Workshop on AI/ML for Cybersecurity**
+- Student Member, **IEEE Communications Society**
 
-### Flagship: Predictive Security Research
+---
 
-**[`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)** · **SECRYPT 2026 submission**
-
-> Hybrid LSTM-Markov attack-chain forecasting. Learns from 4,849 MITRE campaign chains + 8,437 real intrusion traces (Unit42 + MITRE Attack Flow). Generates 26,051 risk-ranked multi-step attack futures via constrained beam search. 86% next-step accuracy, 0.76 Pearson correlation with NCISS severity, <0.2 sec per prefix. Integrates EPSS, CAPEC, CISA KEV, D3FEND, and OCTAVE into a formal 0–10 risk model.
-
-### Supporting Research
-
-**[`Robustness-of-NIDS`](https://github.com/mayank02raj/Robustness-of-NIDS)** · **IEEE Access submission**
-
-> Adversarial robustness evaluation framework. CNN vs LSTM vs Random Forest on ACI-IoT-2023 (1.23M packets) under FGSM, PGD, and CLEVER certification. Formalizes the **False Champion Problem**: Random Forest wins clean benchmarks (99.98%) but collapses to 26.8% at ε=0.01.
-
-**[`Synthetic-Network-Packet-Generation`](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation)** · **ICCCN 2026 submission**
-
-> Constraint-enforcing synthetic IoT packet generation. Statistical learning (PCA + dual OCSVM/IF gating, ~1,091 pkts/sec) and a genetic algorithm (composite fitness, 0.62% anomaly rate). Amplifies the 5-sample ARP Spoofing class by 200×. All 12 ACI-IoT-2023 categories pass independent validators.
-
-### Detection & SOC Infrastructure
-
-**[`SOC-home-lab`](https://github.com/mayank02raj/SOC-home-lab)** · Python 65% · Jupyter 25%
-
-> Production-shaped 11-service Dockerized SOC with Wazuh SIEM, Suricata IDS, TheHive, Cortex, Grafana, and Prometheus. Detection-as-code with Sigma rules, CI-validated unit tests, a Sigma-to-Wazuh compiler, an 8-stage MITRE ATT&CK adversary emulation script, and a threat-hunting Jupyter notebook.
-
-**[`ATTACK-Coverage-Dashboard`](https://github.com/mayank02raj/ATTACK-Coverage-Dashboard)** · Python 97%
-
-> MITRE ATT&CK detection coverage analytics. Ingests Sigma, Wazuh XML, and JSON rules; produces naive + data-source-weighted coverage scores across 130+ threat actors; exports ATT&CK Navigator JSON and PDF reports. 7-page Streamlit UI with real Enterprise-matrix heatmap, SQLite backend, full CI.
-
-### ML for Security
-
-**[`Phishing-URL-Detector`](https://github.com/mayank02raj/Phishing-URL-Detector)** · Python 92%
-
-> Production-shaped ML service. XGBoost on 42 engineered features + CharCNN on raw URLs, FastAPI with SHAP per-request explanations, PSI drift monitoring, Prometheus metrics, multi-stage Dockerfile. ~97% accuracy at <1ms CPU inference.
-
------
-
-## Tech
-
-**ML & Deep Learning**
-`PyTorch` · `scikit-learn` · `XGBoost` · `SHAP` · `Adversarial Robustness Toolbox` · `HuggingFace Transformers` · `MLflow`
-
-**Cybersecurity Stack**
-`MITRE ATT&CK` · `D3FEND` · `Sigma Rules` · `Wazuh` · `Suricata` · `Splunk` · `Corelight` · `TheHive` · `Cortex` · `STIX 2.x` · `EPSS` · `CAPEC` · `CISA KEV` · `Metasploit` · `Burp Suite`
-
-**Backend & Infrastructure**
-`FastAPI` · `Docker` · `Kubernetes` · `AWS (EC2, S3, Lambda)` · `SQLite` · `PostgreSQL` · `Redis` · `Prometheus` · `Grafana` · `GitHub Actions`
-
-**Languages**
-`Python` · `Bash` · `SQL` · `C/C++` (academic) · `JavaScript` (academic)
-
------
-
-## Collaborators
-
-|                                                                                                               |                                 |
-|---------------------------------------------------------------------------------------------------------------|---------------------------------|
-|**Dr. Nathaniel D. Bastian** — Deputy Director of Robotics Research Center, U.S. Military Academy at West Point|[USMA](https://www.westpoint.edu)|
-|**Dr. Lance Fiondella** — Director of Cybersecurity Center, UMass Dartmouth (NSA/DHS-designated CAE-R)         |[UMassD](https://www.umassd.edu) |
-|**Dr. Gokhan Kul** — Advisor · Associate Director of Cybersecurity Center, UMass Dartmouth                     |[UMassD](https://www.umassd.edu) |
-
-Research at UMass Dartmouth is conducted at the [Cybersecurity Center](https://www.umassd.edu/cybersecurity/), an **NSA/DHS-designated Center of Academic Excellence in Cyber Research** (CAE-R).
-
------
-
-## Professional Memberships & Service
-
-- **IEEE Communications Society** (ComSoc) — Student Member
-- **IEEE MILCOM 2025** — Technical Paper Reviewer
-- **DSN 2026 Workshop** — Technical Program Committee Member
-
------
-
-## Work Authorization
-
-**F-1 STEM OPT eligible** — 36 months of work authorization post-graduation (May 2026 – August 2029). **E-Verify compatible. No sponsorship required through August 2029.**
-
-Open to cybersecurity research-scientist, threat-detection-engineering, ML-engineer, and security-research roles across the Boston / NYC / DC corridor, and nationwide for the right fit.
-
------
-
-## Contact
-
-The best way to reach me is **email** or a **LinkedIn DM**:
-
-- ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com)
-- 💼 [linkedin.com/in/mayank02raj](https://linkedin.com/in/mayank02raj)
-- 🌐 [mayank02raj.github.io](https://mayank02raj.github.io)
-
-For research inquiries (paper preprints, collaboration, reproducibility questions), email is preferred. Preprints for the four papers above are available on request pending institutional review.
-
-<p align="center"><em>Last updated: April 2026</em></p>
+**Open to full-time cybersecurity research-scientist, threat-detection-engineering, and ML-security roles starting Summer 2026.** F-1 STEM OPT eligible — 36 months of work authorization, E-Verify compatible, no sponsorship required through Aug 2029.
