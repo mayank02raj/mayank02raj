@@ -4,7 +4,7 @@
 
 I build ML systems that move cyber defense from **reactive detection** to **proactive prediction and decision**.
 
-📍 Dartmouth, MA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj)
+📍 Boston, MA, USA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj)
 
 ![Badge — DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge — Papers](https://img.shields.io/badge/First--Author%20Papers-4%20(1%20Accepted%2C%203%20Under%20Review)-4FA3FF?style=flat-square&labelColor=0A1830)
 
