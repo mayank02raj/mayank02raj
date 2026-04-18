@@ -14,13 +14,13 @@ I build ML systems that move cyber defense from **reactive detection** to **proa
 
 Four first-author papers (1 accepted, 3 under review), all supported by DoD Cooperative Agreement W911NF-22-2-0160 in collaboration with the U.S. Military Academy at West Point. The program builds a full pipeline from **robustness evaluation** → **data augmentation** → **attack prediction** → **optimal defense selection**.
 
-### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, under review)
-Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
-→ Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
-
 ### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS (DSN 2026 Workshop, ACCEPTED)
 Decision-theoretic extension that adds an Adversarial Risk Analysis (ARA-OSID) layer selecting **defender-optimal response policy** across the full threat landscape. **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
 → The two parts answer complementary questions: **"What will the attacker do?"** and **"Given that, what should the defender do?"**
+
+### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, under review)
+Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
+→ Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
 ### Categorical Robustness Assessment and Model Evaluation for Machine Learning-Based Network Intrusion Detection Systems (IEEE Access, under review)
 CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023, exposing a **68.66-pp gap** that benchmark accuracy alone cannot predict.
