@@ -24,7 +24,7 @@ Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions a
 
 → Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-### Part 2 — ATT&CK-Derived Decision Theory (DSN 2026 Workshop, under review)
+### Part 2 — ATT&CK-Derived Decision Theory (DSN 2026 Workshop, ACCEPTED)
 Decision-theoretic extension of Part 1. Takes the same pipeline's data structures and adds an Adversarial Risk Analysis (ARA-OSID) layer that selects **defender-optimal response policy** `r*` across the full threat landscape.
 
 - **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata — no assumed values
@@ -50,6 +50,8 @@ Research on the infrastructure the flagship pipeline depends on. Two first-autho
 
 ## 💻 Production-Shaped Open Source
 
+### Security & Detection
+
 | Repo | Stack | What it demonstrates |
 |---|---|---|
 | [`SOC-home-lab`](https://github.com/mayank02raj/SOC-home-lab) | Wazuh, Suricata, TheHive, Cortex, Grafana, Prometheus, Docker Compose | 11-service Dockerized SOC with 9 authored Sigma rules (pytest CI), custom Sigma-to-Wazuh compiler, 8-stage MITRE ATT&CK adversary emulation covering 91.3% of the kill chain |
@@ -58,6 +60,15 @@ Research on the infrastructure the flagship pipeline depends on. Two first-autho
 | [`network-traffic-anomaly-visualizer`](https://github.com/mayank02raj/network-traffic-anomaly-visualizer) | Scapy, Plotly, Docker | Packet capture with Z-score/IQR anomaly detection; per-source port scan detection via Shannon entropy; interactive HTML dashboards; streaming mode for long captures |
 | [`honeypot-attack-classifier`](https://github.com/mayank02raj/honeypot-attack-classifier) | Paramiko, scikit-learn, Flask, Docker Compose | SSH/HTTP/FTP honeypot with Random Forest session classification; thread-safe rate limiting; webhook alerting; real-time dashboard |
 | [`cloud-security-auditor`](https://github.com/mayank02raj/cloud-security-auditor) | Boto3, Moto, Docker | AWS security scanner across 6 service areas against CIS benchmarks; multi-region scanning with retry/backoff; CI-friendly exit codes |
+
+### ML / Data Science
+
+| Repo | Stack | What it demonstrates |
+|---|---|---|
+| [`llm-hallucination-detector`](https://github.com/mayank02raj/llm-hallucination-detector) | Sentence-Transformers, spaCy, FastAPI, Streamlit | Factual grounding checker (semantic similarity + entity overlap + numerical accuracy), LLM-as-judge bias detection (positional, verbosity, self-enhancement via binomial tests), calibration curves with ECE/MCE; bootstrap CIs on hallucination rates |
+| [`adaptive-experimentation-engine`](https://github.com/mayank02raj/adaptive-experimentation-engine) | NumPy, FastAPI, Streamlit | A/B tests with O'Brien-Fleming sequential monitoring, Thompson Sampling (Beta-Bernoulli), contextual bandits (online logistic regression); simulation engine comparing regret across strategies; file-backed state persistence |
+| [`ts-foundation-benchmark`](https://github.com/mayank02raj/ts-foundation-benchmark) | PyTorch, statsmodels, XGBoost, Chronos | Benchmark comparing ARIMA, LSTM (early stopping + val split), XGBoost (lag features + cyclical encoding) against foundation models; few-shot learning curves at varying context lengths |
+
 ---
 
 ## 🎓 Background
