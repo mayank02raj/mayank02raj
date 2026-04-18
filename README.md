@@ -18,7 +18,7 @@ Four first-author papers (1 accepted, 3 under review), all supported by DoD Coop
 Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
 → Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS (DSN 2026 Workshop, accepted)
+### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS (DSN 2026 Workshop, ACCEPTED)
 Decision-theoretic extension that adds an Adversarial Risk Analysis (ARA-OSID) layer selecting **defender-optimal response policy** across the full threat landscape. **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
 → The two parts answer complementary questions: **"What will the attacker do?"** and **"Given that, what should the defender do?"**
 
