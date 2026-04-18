@@ -55,7 +55,9 @@ Research on the infrastructure the flagship pipeline depends on. Two first-autho
 | [`SOC-home-lab`](https://github.com/mayank02raj/SOC-home-lab) | Wazuh, Suricata, TheHive, Cortex, Grafana, Prometheus, Docker Compose | 11-service Dockerized SOC with 9 authored Sigma rules (pytest CI), custom Sigma-to-Wazuh compiler, 8-stage MITRE ATT&CK adversary emulation covering 91.3% of the kill chain |
 | [`ATTACK-Coverage-Dashboard`](https://github.com/mayank02raj/ATTACK-Coverage-Dashboard) | Streamlit, SQLite, Python | 7-page analytics over MITRE ATT&CK coverage; ingests Sigma / Wazuh-XML / JSON rules; data-source-weighted coverage across 130+ threat actors; exports ATT&CK Navigator JSON + PDF reports |
 | [`Phishing-URL-Detector`](https://github.com/mayank02raj/Phishing-URL-Detector) | FastAPI, XGBoost, PyTorch (CharCNN), SHAP, Prometheus, Docker | Production-shaped ML service: XGBoost on 42 engineered features + CharCNN on raw URL characters; per-request SHAP explanations, PSI drift monitoring; ~97% accuracy at <1ms CPU inference |
-
+| [`network-traffic-anomaly-visualizer`](https://github.com/mayank02raj/network-traffic-anomaly-visualizer) | Scapy, Plotly, Docker | Packet capture with Z-score/IQR anomaly detection; per-source port scan detection via Shannon entropy; interactive HTML dashboards; streaming mode for long captures |
+| [`honeypot-attack-classifier`](https://github.com/mayank02raj/honeypot-attack-classifier) | Paramiko, scikit-learn, Flask, Docker Compose | SSH/HTTP/FTP honeypot with Random Forest session classification; thread-safe rate limiting; webhook alerting; real-time dashboard |
+| [`cloud-security-auditor`](https://github.com/mayank02raj/cloud-security-auditor) | Boto3, Moto, Docker | AWS security scanner across 6 service areas against CIS benchmarks; multi-region scanning with retry/backoff; CI-friendly exit codes |
 ---
 
 ## 🎓 Background
