@@ -6,45 +6,29 @@ I build ML systems that move cyber defense from **reactive detection** to **proa
 
 📍 Dartmouth, MA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj)
 
-![Badge — DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge — Papers](https://img.shields.io/badge/First--Author%20Papers-4%20Under%20Review-4FA3FF?style=flat-square&labelColor=0A1830)
+![Badge — DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge — Papers](https://img.shields.io/badge/First--Author%20Papers-4%20(1%20Accepted%2C%203%20Under%20Review)-4FA3FF?style=flat-square&labelColor=0A1830)
 
 ---
 
-## 🎯 Recent Research
+## 📄 Research & Publications
 
-A two-part program on **predictive cyber defense with empirical decision theory**. Both parts submitted, both supported by DoD Cooperative Agreement W911NF-22-2-0160 in collaboration with the U.S. Military Academy at West Point.
+Four first-author papers (1 accepted, 3 under review), all supported by DoD Cooperative Agreement W911NF-22-2-0160 in collaboration with the U.S. Military Academy at West Point. The program builds a full pipeline from **robustness evaluation** → **data augmentation** → **attack prediction** → **optimal defense selection**.
 
-### Part 1 — Attack Chain Prediction (SECRYPT 2026, under review)
-Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed attack prefix (e.g., `T1566.001 → T1059 → T1003`), the system generates risk-ranked continuations via constrained beam search.
-
-- **86% next-step accuracy**, Pearson **r=0.76** / Spearman **ρ=0.81** against CISA NCISS severity scoring
-- **26,051 risk-ranked forecasts** at **<0.2 sec** inference latency per prefix
-- Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces (Unit42 + MITRE Attack Flow)
-- Formal 0–10 risk model integrates EPSS, CAPEC, CISA KEV, D3FEND coverage, OCTAVE impact
-
+### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, under review)
+Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
 → Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-### Part 2 — ATT&CK-Derived Decision Theory (DSN 2026 Workshop, ACCEPTED)
-Decision-theoretic extension of Part 1. Takes the same pipeline's data structures and adds an Adversarial Risk Analysis (ARA-OSID) layer that selects **defender-optimal response policy** `r*` across the full threat landscape.
+### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS (DSN 2026 Workshop, accepted)
+Decision-theoretic extension that adds an Adversarial Risk Analysis (ARA-OSID) layer selecting **defender-optimal response policy** across the full threat landscape. **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
+→ The two parts answer complementary questions: **"What will the attacker do?"** and **"Given that, what should the defender do?"**
 
-- **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata — no assumed values
-- Joint attacker-defender model with Monte Carlo integration (N=10,000) over Beta-distributed detection probabilities
-- Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**
-- Attacker utility `ψ_A` built from technique permissions, D3FEND coverage, kill-chain position, NCISS benefit
-- Defender utility `ψ_r` built from group frequency, severity-weighted detection gaps, evasion sub-technique counts, mitigation portfolio size
+### Categorical Robustness Assessment and Model Evaluation for Machine Learning-Based Network Intrusion Detection Systems (IEEE Access, under review)
+CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023, exposing a **68.66-pp gap** that benchmark accuracy alone cannot predict.
+→ Repo: [`Robustness-of-NIDS`](https://github.com/mayank02raj/Robustness-of-NIDS)
 
-→ The two parts answer complementary questions: **Part 1 asks "what will the attacker do?"** **Part 2 asks "given that, what should the defender do?"**
-
----
-
-## 🛠️ Supporting Research
-
-Research on the infrastructure the flagship pipeline depends on. Two first-author papers under review.
-
-| Paper | Venue | Contribution | Repo |
-|---|---|---|---|
-| **The False Champion Problem** — categorical robustness assessment of ML-based NIDS | IEEE Access | CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023 (68.66-pp gap) | [Robustness-of-NIDS](https://github.com/mayank02raj/Robustness-of-NIDS) |
-| **Constraint-enforcing synthetic packet generation** | ICCCN 2026 | **200× amplification** of a 5-sample ARP Spoofing class with **<2.5%** anomaly rate against independent validators | [Synthetic-Network-Packet-Generation](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation) |
+### Synthetic Network Packet Generation through Statistical Learning and Genetic Algorithms (ICCCN 2026, under review)
+Constraint-enforcing generator combining statistical learning and genetic algorithms. Achieves **200× amplification** of a 5-sample ARP Spoofing class with **<2.5% anomaly rate** against independent validators, enabling privacy-preserving security testing.
+→ Repo: [`Synthetic-Network-Packet-Generation`](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation)
 
 ---
 
