@@ -18,15 +18,15 @@ Four first-author papers (1 accepted, 3 under review), all supported by DoD Coop
 Decision-theoretic extension that adds an Adversarial Risk Analysis (ARA-OSID) layer selecting **defender-optimal response policy** across the full threat landscape. **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
 → The two parts answer complementary questions: **"What will the attacker do?"** and **"Given that, what should the defender do?"**
 
-### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, under review)
+### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, ACCEPTED)
 Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
 → Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-### Categorical Robustness Assessment and Model Evaluation for Machine Learning-Based Network Intrusion Detection Systems (IEEE Access, under review)
+### Categorical Robustness Assessment and Model Evaluation for Machine Learning-Based Network Intrusion Detection Systems (Arxiv.org, arXiv:2606.12075)
 CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023, exposing a **68.66-pp gap** that benchmark accuracy alone cannot predict.
 → Repo: [`Robustness-of-NIDS`](https://github.com/mayank02raj/Robustness-of-NIDS)
 
-### Synthetic Network Packet Generation through Statistical Learning and Genetic Algorithms (ICCCN 2026, under review)
+### Synthetic Network Packet Generation through Statistical Learning and Genetic Algorithms (Arxiv.org, arXiv.2606.20864)
 Constraint-enforcing generator combining statistical learning and genetic algorithms. Achieves **200× amplification** of a 5-sample ARP Spoofing class with **<2.5% anomaly rate** against independent validators, enabling privacy-preserving security testing.
 → Repo: [`Synthetic-Network-Packet-Generation`](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation)
 
