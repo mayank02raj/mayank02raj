@@ -1,34 +1,47 @@
 # Mayank Raj
 
-**ML Security Researcher** · Graduate Research Assistant, UMass Dartmouth × U.S. Military Academy at West Point
+**ML Security Researcher** · Ph.D. Student in Computer Science, University of Illinois Chicago · Systems and Internet Security Lab, advised by Prof. V.N. Venkatakrishnan
 
-I build ML systems that move cyber defense from **reactive detection** to **proactive prediction and decision**.
+I build ML systems that move cyber defense from **reactive detection** to **proactive prediction and decision**. My Ph.D. work focuses on the security of **LLM agents**, including prompt injection.
 
-📍 Chicago, IL, USA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj)
+📍 Chicago, IL, USA · ✉️ [raj02mayank@gmail.com](mailto:raj02mayank@gmail.com) · 🌐 [mayank02raj.github.io](https://mayank02raj.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/mayank02raj) · 🆔 [ORCID](https://orcid.org/0009-0001-2341-9002)
 
-![Badge — DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge — NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge — Papers](https://img.shields.io/badge/First--Author%20Papers-4%20-4FA3FF?style=flat-square&labelColor=0A1830)
+![Badge: UIC PhD](https://img.shields.io/badge/Ph.D.-UIC%20Computer%20Science-0A1830?style=flat-square&labelColor=D50032) ![Badge: DoD Research](https://img.shields.io/badge/Research-DoD%20W911NF--22--2--0160-0A1830?style=flat-square&labelColor=1F4E79) ![Badge: West Point Collab](https://img.shields.io/badge/Collaboration-U.S.%20Military%20Academy-0A1830?style=flat-square&labelColor=1F4E79) ![Badge: NCAE 2026](https://img.shields.io/badge/NCAE%202026-%231%20National%20Score%20(140%2B%20teams)-2DD4A8?style=flat-square&labelColor=0A1830) ![Badge: Papers](https://img.shields.io/badge/First--Author%20Papers-4-4FA3FF?style=flat-square&labelColor=0A1830)
+
+---
+
+## 🔭 Now
+
+- **Ph.D. in Computer Science, UIC** (Fall 2026–present): security of LLM agents and prompt injection
+- **ARA-OSID journal paper** in preparation for **ACM TOPS**
+- Working toward **OSCP**
 
 ---
 
 ## 📄 Research & Publications
 
-Four first-author papers (2 accepted, 2 preprints), all supported by DoD Cooperative Agreement W911NF-22-2-0160 in collaboration with the U.S. Military Academy at West Point. The program builds a full pipeline from **robustness evaluation** → **data augmentation** → **attack prediction** → **optimal defense selection**.
+Four first-author papers (SECRYPT 2026, a DSN 2026 workshop paper, and two arXiv preprints) plus a journal paper in preparation, all from DoD-funded research (Cooperative Agreement W911NF-22-2-0160) with the U.S. Military Academy at West Point. Together they answer two linked questions for network defense:
 
-### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS (DSN 2026 Workshop, ACCEPTED)
-Decision-theoretic extension that adds an Adversarial Risk Analysis (ARA-OSID) layer selecting **defender-optimal response policy** across the full threat landscape. **First-ever derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
-→ The two parts answer complementary questions: **"What will the attacker do?"** and **"Given that, what should the defender do?"**
+> **"What will the attacker do next?"** → **"Given that, what should the defender do?"**
 
-### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment (SECRYPT 2026, ACCEPTED)
-Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains + 8,437 real-world intrusion traces.
+### MITRE ATT&CK-Based Attack Chain Prediction Using Hybrid LSTM-Markov Models for Cybersecurity Risk Assessment · **SECRYPT 2026, published**
+Hybrid LSTM-Markov framework that forecasts multi-stage adversary progressions against MITRE ATT&CK. Given an observed prefix (e.g., `T1566.001 → T1059 → T1003`), it generates risk-ranked continuations via constrained beam search. **86% next-step accuracy**, **26,051 forecasts** at **<0.2 sec** latency. Trained on 4,849 MITRE campaign chains and 8,437 real-world intrusion traces.
 → Repo: [`ATTACK-Chain-Prediction`](https://github.com/mayank02raj/ATTACK-Chain-Prediction)
 
-### Categorical Robustness Assessment and Model Evaluation for Machine Learning-Based Network Intrusion Detection Systems (Arxiv.org, arXiv:2606.12075)
-CNN retains **95.5%** accuracy vs Random Forest collapsing to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023, exposing a **68.66-pp gap** that benchmark accuracy alone cannot predict.
-→ Repo: [`Robustness-of-NIDS`](https://github.com/mayank02raj/Robustness-of-NIDS)
+### From Threat Intelligence to Decision Theory: ATT&CK-Derived Utility Functions for Adversarial Risk Analysis in NIDS · **DSN 2026 Workshop, accepted**
+Adds an Adversarial Risk Analysis (ARA-OSID) layer that selects the **defender-optimal response policy** across the full threat landscape. **First derivation of all 10 ARA utility-function parameters** from structured MITRE ATT&CK v16 metadata. Validated across **201 techniques**, **143 threat groups**, and **33 campaigns**.
 
-### Synthetic Network Packet Generation through Statistical Learning and Genetic Algorithms (Arxiv.org, arXiv.2606.20864)
-Constraint-enforcing generator combining statistical learning and genetic algorithms. Achieves **200× amplification** of a 5-sample ARP Spoofing class with **<2.5% anomaly rate** against independent validators, enabling privacy-preserving security testing.
-→ Repo: [`Synthetic-Network-Packet-Generation`](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation)
+### ARA-OSID Journal Paper · **in preparation for ACM TOPS**
+Full journal treatment of the ARA-OSID framework, extending the DSN workshop paper with complete validation and sensitivity analysis.
+
+### M.S. Thesis · **UMass Dartmouth, 2026, open access**
+*From Threat Intelligence to Decision Theory: Empirically Grounded Utility Functions for Adversarial Risk Analysis in Network Intrusion Detection.* Ties attack chain prediction and ARA-OSID into one integrated framework.
+→ [doi.org/10.62791/20632](https://doi.org/10.62791/20632)
+
+### Earlier parts of the program (preprints)
+
+- **Categorical Robustness Assessment and Model Evaluation for ML-Based NIDS** ([arXiv:2606.12075](https://arxiv.org/abs/2606.12075)): CNN retains **95.5%** accuracy while Random Forest collapses to **26.8%** under ε=0.01 FGSM on ACI-IoT-2023, a **68.66-pp gap** that benchmark accuracy alone does not predict. → [`Robustness-of-NIDS`](https://github.com/mayank02raj/Robustness-of-NIDS)
+- **Synthetic Network Packet Generation through Statistical Learning and Genetic Algorithms** ([arXiv:2606.20864](https://arxiv.org/abs/2606.20864)): **200× amplification** of a 5-sample ARP Spoofing class with **<2.5% anomaly rate** against independent validators. → [`Synthetic-Network-Packet-Generation`](https://github.com/mayank02raj/Synthetic-Network-Packet-Generation)
 
 ---
 
@@ -55,21 +68,26 @@ Constraint-enforcing generator combining statistical learning and genetic algori
 
 ---
 
-## 🎓 Background
+## 🏆 Recognition & Service
 
-- **M.S. Data Science (Thesis Track)**, UMass Dartmouth · GPA 3.6/4.0 · expected May 2026
-  - *Thesis:* Resilience Engineering of ML-enabled Open-World Recognition for Network Intrusion Detection Systems. Defense August 2026.
-- **B.Tech. Mechanical Engineering**, Christ University, Bengaluru
-- 4+ years industry ML: Data Scientist / Software Engineer at Eklavya Estate (Bengaluru) — ETL pipelines on 500K+ records, ARIMA + LSTM forecasting across 15+ markets, AWS microservices at 10K+ concurrent users
-
-## 🏆 Competition & Service
-
-- **1st Place** — 2026 NCAE Cyber Games, Northeast 2 Region (highest overall score among 140 national teams)
-- **ISC2 Certified in Cybersecurity (CC)** — 2025; **OSCP** in progress, targeting Aug 2026
-- Technical Paper Reviewer, **IEEE MILCOM 2025**
-- Technical Program Committee, **DSN 2026 Workshop on AI/ML for Cybersecurity**
-- Student Member, **IEEE Communications Society**
+- **1st place, highest national score**, 2026 NCAE Cyber Games (Northeast 2 Region, 140+ teams)
+- **Reviewer:** IEEE MILCOM 2026 (AI/ML for Communication and Networking track) · IEEE GLOBECOM 2026 (workshop) · IEEE MILCOM 2025 (WS07 workshop)
+- **Technical Program Committee:** DSN 2026 Workshop on Dependable and Secure Autonomous Systems
+- **Certifications:** ISC2 Certified in Cybersecurity (CC), 2025 · OSCP (in progress)
+- **Teaching:** GTA for CIS-190 Procedural Programming and CIS-552 Database Design, UMass Dartmouth
+- **Membership:** IEEE Student Member, Communications Society
 
 ---
 
-**Open to full-time cybersecurity research-scientist, threat-detection-engineering, and ML-security roles starting Summer 2026.** F-1 STEM OPT eligible — 36 months of work authorization, E-Verify compatible, no sponsorship required through Aug 2029.
+## 🎓 Background
+
+- **Ph.D. Computer Science**, University of Illinois Chicago · Fall 2026–present
+- **M.S. Data Science (Thesis Track)**, UMass Dartmouth · GPA 3.6/4.0 · 2026
+  - Graduate Research Assistant on DoD-funded research with the U.S. Military Academy at West Point
+  - Thesis defended August 2026 · [open access](https://doi.org/10.62791/20632)
+- **B.Tech. Mechanical Engineering**, Christ University, Bengaluru
+- **3.5+ years industry experience:** Data Scientist / Software Engineer at Eklavya Estate (Bengaluru), with ETL pipelines on 500K+ records, ARIMA + LSTM forecasting across 15+ markets, and AWS microservices at 10K+ concurrent users; ML engineering intern at Hindustan Aeronautics Limited (HAL) on aerospace systems
+
+---
+
+**Open to research collaborations and Summer 2027 research internships** in ML security, LLM agent security, and threat detection.
